@@ -7,9 +7,9 @@ import GameOfLife._
 class RulesSpec extends Properties("Rule") with BlockGen {
 
   implicit val listCompassFunctor: CompassFunctor[List] = new CompassFunctor[List] {
-    override def cmap[A, B](fa: List[A])(z: => A)(f: Compass[A] => B): List[B] = fa match {
-      case tl :: t :: tr :: ml :: middle :: mr :: bl :: b :: br :: Nil =>
-        List(f(Compass(middle, List(tl, t, tr, ml, mr, bl, b, br))))
+    override def cmap[A, B](fa: List[A])(z: => A)(fc: Compass[A] => B): List[B] = fa match {
+      case a :: b :: c :: d :: middle :: e :: f :: g :: h :: Nil =>
+        List(fc(Compass(middle, List(a, b, c, d, e, f, g, h))))
       case _ => Nil
     }
   }
@@ -24,7 +24,7 @@ class RulesSpec extends Properties("Rule") with BlockGen {
   property("underpopulated - dies") = forAllNoShrink(schrodingersBlock(0, 1))(nextGeneration(_) shouldBe Dead)
 
   property("population 2 - no change") =
-    forAllNoShrink(schrodingersBlock(2))(list => nextGeneration(list) shouldBe list(4))
+    forAllNoShrink(schrodingersBlock(2))(block => nextGeneration(block) shouldBe block(4))
 
   property("population 3 - always alive") = forAllNoShrink(schrodingersBlock(3))(nextGeneration(_) shouldBe Alive)
 
