@@ -9,7 +9,7 @@ trait PatternGen {
   import patterns.OscillatingPatterns._
   import patterns.TravellingPatterns._
 
-  val staticGen: Gen[GameMap[Cell]] = Gen.oneOf(block, boat, loaf, beehive)
+  val staticGen: Gen[GameMap[Cell]]            = Gen.oneOf(block, boat, loaf, beehive)
   val oscillatingGen: Gen[List[GameMap[Cell]]] = Gen.oneOf(blinker, beacon, toad)
-  val travellingGen: Gen[List[GameMap[Cell]]] = Gen.oneOf(glider, lightSpaceship)
+  val travellingGen: Gen[List[GameMap[Cell]]]  = Gen.oneOf(glider, lightSpaceship)
 }

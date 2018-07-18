@@ -8,7 +8,8 @@ object StaticPatterns {
   val block: GameMap[Cell] = PatternBuilder(
     """**
       |**
-    """.stripMargin)
+    """.stripMargin
+  )
 
   val boat: GameMap[Cell] = PatternBuilder(
     """**.
