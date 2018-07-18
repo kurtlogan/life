@@ -1,7 +1,7 @@
 package com.kurtlogan.life
 
 import org.scalacheck._
-import org.scalacheck.Prop.{ forAll, forAllNoShrink }
+import org.scalacheck.Prop.forAllNoShrink
 import GameOfLife._
 
 class RulesSpec extends Properties("Rule") with BlockGen {
