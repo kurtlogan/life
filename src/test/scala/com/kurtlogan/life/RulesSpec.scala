@@ -8,8 +8,8 @@ class RulesSpec extends Properties("Rule") with BlockGen {
 
   implicit val listCompassFunctor: CompassFunctor[List] = new CompassFunctor[List] {
     override def cmap[A, B](fa: List[A])(z: => A)(f: Compass[A] => B): List[B] = fa match {
-      case tl :: t :: tr :: ml :: m :: mr :: bl :: b :: br :: Nil =>
-        List(f(Compass(m, List(tl, t, tr, ml, mr, bl, b, br))))
+      case tl :: t :: tr :: ml :: middle :: mr :: bl :: b :: br :: Nil =>
+        List(f(Compass(middle, List(tl, t, tr, ml, mr, bl, b, br))))
       case _ => Nil
     }
   }
