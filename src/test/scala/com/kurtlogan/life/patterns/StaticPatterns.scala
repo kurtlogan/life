@@ -1,7 +1,7 @@
 package com.kurtlogan.life.patterns
 
 import com.kurtlogan.life.Cell
-import com.kurtlogan.life.GameMap.GameMap
+import com.kurtlogan.life.GameBoard.GameMap
 
 object StaticPatterns {
 

@@ -1,7 +1,7 @@
 package com.kurtlogan.life.patterns
 
 import com.kurtlogan.life._
-import com.kurtlogan.life.GameMap.{ Coord, GameMap }
+import com.kurtlogan.life.GameBoard.{ Coord, GameMap }
 
 object PatternBuilder {
   def apply(s: String): GameMap[Cell] = {

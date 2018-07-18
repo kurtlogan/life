@@ -1,7 +1,7 @@
 package com.kurtlogan.life
 
 import org.scalacheck.Gen
-import GameMap._
+import GameBoard._
 
 trait PatternGen {
 

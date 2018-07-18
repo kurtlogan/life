@@ -3,7 +3,7 @@ package com.kurtlogan.life
 import org.scalacheck.Properties
 import org.scalacheck.Prop.forAllNoShrink
 import GameOfLife.nextGeneration
-import GameMap._
+import GameBoard._
 
 class PatternsSpec extends Properties("Pattern") with PatternGen {
 
