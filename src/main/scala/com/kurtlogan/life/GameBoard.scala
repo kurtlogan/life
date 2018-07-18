@@ -1,6 +1,6 @@
 package com.kurtlogan.life
 
-object GameMap {
+object GameBoard {
 
   case class Coord(x: Int, y: Int)
 
