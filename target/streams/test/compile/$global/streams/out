@@ -1,0 +1,8 @@
+[0m[[0m[31merror[0m] [0m[0m/home/kurt/Documents/github/kurtlogan/life/src/test/scala/com/kurtlogan/life/PatternGen.scala:14:59: type mismatch;[0m
+[0m[[0m[31merror[0m] [0m[0m found   : List[com.kurtlogan.life.GameMap.GameMap[com.kurtlogan.life.Cell]][0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  List[scala.collection.immutable.Map[com.kurtlogan.life.GameMap.Coord,com.kurtlogan.life.Cell]][0m
+[0m[[0m[31merror[0m] [0m[0m required: Seq[List[com.kurtlogan.life.GameMap.GameMap[com.kurtlogan.life.Cell]]][0m
+[0m[[0m[31merror[0m] [0m[0m    (which expands to)  Seq[List[scala.collection.immutable.Map[com.kurtlogan.life.GameMap.Coord,com.kurtlogan.life.Cell]]][0m
+[0m[[0m[31merror[0m] [0m[0m  val travellingGen: Gen[List[GameMap[Cell]]] = Gen.oneOf(lightSpaceship)[0m
+[0m[[0m[31merror[0m] [0m[0m                                                          ^[0m
+[0m[[0m[31merror[0m] [0m[0mone error found[0m
