@@ -4,9 +4,9 @@ import scala.language.higherKinds
 
 object GameOfLife {
 
-  import CompassFunctor.ops._
+  import CompassMapper.ops._
 
-  def nextGeneration[F[_]: CompassFunctor](cells: F[Cell]): F[Cell] =
+  def nextGeneration[F[_]: CompassMapper](cells: F[Cell]): F[Cell] =
     cells.cmap(Dead) {
       case c @ TwoNeighbours() => c.point
       case ThreeNeighbours()   => Alive

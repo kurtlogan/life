@@ -22,7 +22,7 @@ object GameBoard {
   private def growBorders[A](fa: GameMap[A])(z: => A): GameMap[A] =
     fa.filter(_._2 == Alive).flatMap(x => neighbours(fa)(z)(x._1)) ++ fa
 
-  implicit val mapCompassFunctor: CompassFunctor[GameMap] = new CompassFunctor[GameMap] {
+  implicit val mapCompassFunctor: CompassMapper[GameMap] = new CompassMapper[GameMap] {
 
     override def cmap[A, B](fa: GameMap[A])(z: => A)(f: Compass[A] => B): GameMap[B] =
       growBorders(fa)(z).flatMap {

@@ -4,18 +4,18 @@ import scala.language.higherKinds
 
 case class Compass[A](point: A, neighbours: Seq[A])
 
-trait CompassFunctor[F[_]] {
+trait CompassMapper[F[_]] {
   def cmap[A, B](fa: F[A])(z: => A)(f: Compass[A] => B): F[B]
 }
 
-object CompassFunctor {
+object CompassMapper {
 
-  def apply[F[_]: CompassFunctor]: CompassFunctor[F] = implicitly[CompassFunctor[F]]
+  def apply[F[_]: CompassMapper]: CompassMapper[F] = implicitly[CompassMapper[F]]
 
   object ops {
-    implicit class CompassFunctorOps[A, F[_]: CompassFunctor](fa: F[A]) {
+    implicit class CompassMapperOps[A, F[_]: CompassMapper](fa: F[A]) {
       def cmap[B](z: => A)(f: Compass[A] => B): F[B] =
-        CompassFunctor[F].cmap(fa)(z)(f)
+        CompassMapper[F].cmap(fa)(z)(f)
     }
   }
 }

@@ -6,7 +6,7 @@ import GameOfLife._
 
 class RulesSpec extends Properties("Rule") with BlockGen {
 
-  implicit val listCompassFunctor: CompassFunctor[List] = new CompassFunctor[List] {
+  implicit val listCompassFunctor: CompassMapper[List] = new CompassMapper[List] {
     override def cmap[A, B](fa: List[A])(z: => A)(fc: Compass[A] => B): List[B] = fa match {
       case a :: b :: c :: d :: middle :: e :: f :: g :: h :: Nil =>
         List(fc(Compass(middle, List(a, b, c, d, e, f, g, h))))
